@@ -1,0 +1,29 @@
+{
+  "name": "real-state-app",
+  "version": "1.0.0",
+  "description": "Real State App, BEM, SASS, Gulp, CSS Grid",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "author": "Daniel Alejandro Uncos Aciar",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "gulp": "^4.0.2",
+    "gulp-avif": "^1.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webp": "^4.0.1",
+    "postcss": "^8.5.3",
+    "sass": "^1.86.3"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%"
+  ]
+}
