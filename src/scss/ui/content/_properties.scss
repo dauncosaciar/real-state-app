@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
@@ -11,5 +12,65 @@
 
   &__heading {
     @include m.heading;
+  }
+
+  &__grid {
+    @include m.grid(1, 2rem);
+
+    @include m.tablet {
+      @include m.grid(3, 2rem);
+    }
+  }
+}
+
+.property {
+  background-color: v.$white;
+
+  &__image {
+    aspect-ratio: 10 / 6;
+    background-size: cover;
+    position: relative;
+  }
+
+  @for $i from 1 through 6 {
+    $image: "../img/property_" + $i + ".jpg";
+    &:nth-child(#{$i}) &__image {
+      background-image: linear-gradient(
+          to bottom,
+          color.adjust(v.$black, $alpha: -0.9) 0%,
+          color.adjust(v.$black, $alpha: -0.3) 100%
+        ),
+        url($image);
+    }
+  }
+
+  &__name {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    color: v.$white;
+    font-size: 2.4rem;
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__price {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  &__link {
+    @include m.button(v.$primary, v.$white);
+
+    & {
+      display: block;
+      text-transform: uppercase;
+    }
   }
 }
