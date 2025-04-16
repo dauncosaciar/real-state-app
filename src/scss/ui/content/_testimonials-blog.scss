@@ -19,3 +19,36 @@
     @include m.heading(true);
   }
 }
+
+.testimonial {
+  text-align: center;
+
+  &__image {
+    width: 20rem;
+    margin: 0 auto;
+  }
+
+  &__content {
+    background-color: v.$white;
+    margin-top: -10rem;
+    padding: 10rem 2rem 2rem;
+  }
+
+  &__name {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    &::before {
+      content: "";
+      background-image: url(../img/quote.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+      width: 4rem;
+      height: 4rem;
+      margin-right: 1rem;
+    }
+  }
+}
