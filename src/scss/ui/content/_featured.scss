@@ -1,0 +1,79 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+/* Featured */
+.featured {
+  margin-top: 5rem;
+  background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      v.$primary 50%,
+      v.$primary 100%
+    ),
+    url(../img/featured.jpg);
+  background-size: 100%, cover;
+  background-position: center, -50rem -30rem;
+  background-repeat: no-repeat;
+
+  @include m.tablet {
+    background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 50%,
+        v.$primary 50%,
+        v.$primary 100%
+      ),
+      url(../img/featured.jpg);
+    background-position: center, -50rem center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+    @include m.tablet {
+      grid-template-rows: unset;
+
+      @include m.grid(2, 2rem);
+    }
+  }
+
+  &__content {
+    padding: 5rem 1rem;
+    grid-row: 2 / 3;
+
+    @include m.phone {
+      padding: 5rem;
+    }
+
+    @include m.tablet {
+      padding: 10rem 5rem;
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__heading {
+    color: v.$white;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: v.$white;
+    font-size: 1.8rem;
+  }
+
+  &__price {
+    color: v.$white;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &__link {
+    @include m.button(v.$white, v.$primary);
+
+    & {
+      display: block;
+    }
+  }
+}
